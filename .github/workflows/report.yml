@@ -8,8 +8,8 @@ on:
     - cron: 0 6 * * 1-5
   
   # temp - to let me run the action manually through the Actions tab and not wait until 7am.
-  workflow_dispatch: null
-
+  workflow_dispatch:
+  
 jobs:
   report:
     
