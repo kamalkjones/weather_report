@@ -1,0 +1,43 @@
+name: Daily Weather Report
+on:
+    # Run this workflow based on this time event.
+	# At 06:00 UTC on every day-of-week from Monday through Friday.
+	# 06:00am UTC = 7:00am BST, may need to change with daylight savings.
+    # - cron: 0 6 * * 1-5
+  # To let me run the action manually through the Actions tab and not wait until 7am.
+  workflow_dispatch:
+  
+jobs:
+  report:
+    
+    # Defining the operating system environment for the GitHub-hosted runner (server) executing this workflow.
+    runs-on: Windows latest
+    
+    steps:
+    
+      # Use the official GitHub Actions 'checkout' workflow to clone this repository into the runner.
+      # Currently the latest version is v5, https://github.com/actions/checkout
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      # Installs python version 3.13.5 onto our runner.
+      # uses the offical GitHub Actions 'setup-python' workflow.
+      # https://github.com/actions/setup-python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.13.5
+
+      # Installs the dependencies listed in our `requirements.txt` file
+      # Uses the `run` label as we are entering a command, not selecting an action.
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      # Last step, running our .py file.
+      # We will load our env files that are kept secret.
+      - name: Run Weather Report
+        env: 
+          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+          DISCORD_CHANNEL_ID: ${{ secrets.WEATHER_API_KEY}}
+          DISCORD_AUTH: ${{ secrets.DISCORD_AUTH}}
+        run: python weather_report.py
