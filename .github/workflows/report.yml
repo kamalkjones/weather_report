@@ -1,4 +1,3 @@
----
 name: Daily Weather Report
 on:
   schedule:
