@@ -15,7 +15,6 @@ lon = 0.0073
 # Determine the unit of measurement, for us: Metric
 units = "metric"
 
-
 # What we do not want from the weather data API response
 exclude = "minutely,hourly,alerts"
 
