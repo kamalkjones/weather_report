@@ -96,8 +96,8 @@ def get_weather(long, lat, units):
 
 
 # Function Call
-weather = get_weather(0.0073, 51.4612, "metric")
-print(weather)
+# weather = get_weather(0.0073, 51.4612, "metric")
+# print(weather)
 
 
 
@@ -167,7 +167,7 @@ send_d_message(channel_id, d_auth, message)
 
 
 ## Error handling for the request method
-r = requests.get('http://github.com/')
+#r = requests.get('http://github.com/')
 
 # try:
     # the `ok` retunrs true if the status_code of the request less than 400.
