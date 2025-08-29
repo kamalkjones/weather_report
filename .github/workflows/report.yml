@@ -1,11 +1,11 @@
 name: Daily Weather Report
 on:
+  workflow_dispatch: # temp - to let me run the action manually through the Actions tab and not wait until 7am.
   schedule:
     # Run this workflow based on this time event.
-	  # At 06:00 UTC on every day-of-week from Monday through Friday.
-		# 06:00am UTC = 7:00am BST, may need to change with daylight savings.
+	# At 06:00 UTC on every day-of-week from Monday through Friday.
+	# 06:00am UTC = 7:00am BST, may need to change with daylight savings.
     - cron: '0 6 * * 1-5'
-  workflow_dispatch: # temp - to let me run the action manually through the Actions tab and not wait until 7am.
 
 jobs:
   report:
