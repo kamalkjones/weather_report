@@ -66,7 +66,7 @@ def get_weather(long, lat, units):
         #   Client error responses (400 - 499)
         #   Server error responses (500 - 599)
         if (r.ok != True):
-            print("Error in the Get request, status is: " + r.reason)
+            print("Error in the OpenWeatherAPI Get request, status is: " + r.reason)
 
         # Handle any issues with the json decoding.
         # Decodes the JSON response body as a Python object.
@@ -139,7 +139,7 @@ def send_d_message(channel_id, d_auth, message):
         #   Client error responses (400 - 499)
         #   Server error responses (500 - 599)
         if (d_request.ok != True):
-            print("Error in the Get request, status is: " + d_request.reason)
+            print("Error in the Discord Get request, status is: " + d_request.reason)
 
     except requests.RequestException:
         print("Error with the request")
