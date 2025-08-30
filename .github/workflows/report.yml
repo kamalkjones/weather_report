@@ -35,6 +35,6 @@ jobs:
       - name: Run Weather Report
         env: 
           WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
-          DISCORD_CHANNEL_ID: ${{ secrets.WEATHER_API_KEY}}
+          DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID}}
           DISCORD_AUTH: ${{ secrets.DISCORD_AUTH}}
         run: python weather_report.py
