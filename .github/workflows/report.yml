@@ -1,7 +1,7 @@
 name: Daily Weather Report
 on:
   schedule:
-    - cron: '0 6 * * 1-5'
+    - cron: '0 6 * * *'
   workflow_dispatch: # temp - to let me run the action manually through the Actions tab and not wait until 7am.
 
 jobs:
